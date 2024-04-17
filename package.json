@@ -1,6 +1,6 @@
 {
-  "name": "@aquilacms/sendcloud",
-  "version": "1.0.0",
+  "name": "@tapni/sendcloud",
+  "version": "1.0.1",
   "description": "implementation of sendcloud API",
   "private": false,
   "main": "build/sendcloud.js",
@@ -13,7 +13,8 @@
   "keywords": [],
   "author": "NextSourcia <contact@nextsourcia.com>",
   "contributors": [
-    "Gérard Le Cloërec <gerard.lecloerec@nextsourcia.com>"
+    "Gérard Le Cloërec <gerard.lecloerec@nextsourcia.com>",
+    "Tapni GmbH <team@tapni.com>"
   ],
   "license": "MIT",
   "dependencies": {

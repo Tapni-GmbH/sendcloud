@@ -13,13 +13,13 @@ You can check the documentation of sendcloud at [this url](https://docs.sendclou
 
 ### Installation
 ```bash
-npm install @aquilacms/sendcloud
+npm install @tapni/sendcloud
 ```
 
 ### Example
 
 ```js
-const SendCloud = require('@aquilacms/sendcloud')
+const SendCloud = require('@aquilacms/sendcloud').default;
 
 const sendCloud = new SendCloud({
     api_key: '<YOUR_API_KEY>',

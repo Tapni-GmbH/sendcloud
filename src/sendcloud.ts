@@ -286,6 +286,27 @@ export default class SendCloud {
             })
             return responseData
         },
+
+        /**
+         * Get a PDF label
+         * @param id Parcel id of which you want the label from
+         * @param printer label_printer or normal_printer
+         * @param start_from 0, 1, 2, 3 where to start generating label on A4 sheet
+         */
+        getPDF: async (id: string, printer = 'label_printer', start_from = '0'): Promise<any> => {
+            const { data: responseData } = await Axios.get(
+                `labels/${printer}/${id}?start_from=${start_from}`,
+                {
+                    auth: {
+                        username: this.configuration.api_key,
+                        password: this.configuration.api_secret,
+                    },
+                    responseType: 'arraybuffer',
+                },
+            )
+            return responseData
+        },
+
         /**
          * Bulk PDF label printing\
          * Using this endpoint you may print your parcel labels in bulk.
@@ -395,6 +416,7 @@ export default class SendCloud {
          * You’re able to retrieve the list of shipments from an integration
          * Do note that these shipments will NOT be affected by Shipping Rules on the time of retrieval.
          * @param id integrations id
+         * @param options
          */
         integrationShipments: async (
             id: string,
@@ -450,6 +472,7 @@ export default class SendCloud {
          * (as the fields “order_status” and “payment_status” are not mapped to anything within our systems).
          * You must provide either a shipment_uuid or the combination of external_order_id and external_shipment_id to this endpoint.
          * @param id integrations id
+         * @param data
          */
         deleteIntegrationShipments: async (
             id: string,
